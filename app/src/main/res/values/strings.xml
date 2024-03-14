@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">MyStudent</string>
+    <string name="app_logo">App logo</string>
+    <string name="my_student">My Student</string>
+    <string name="login">Login</string>
+    <string name="enter_student_id">Enter Student ID</string>
+    <string name="enter_password">Enter Password</string>
+    <string name="s_s_high_school">S.S high School</string>
+    <string name="todo">TODO</string>
+    <string name="ruddarm_maurya">Ruddarm Maurya</string>
+    <string name="stndproflipic">StndProflipic</string>
+    <string name="title_activity_bus_tack_map">BusTackMap</string>
+</resources>

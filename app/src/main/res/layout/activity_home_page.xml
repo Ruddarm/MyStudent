@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#9CB59A">
+
+    <LinearLayout
+        android:id="@+id/HeadLayout"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="#225C6E"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:outlineAmbientShadowColor="#271F1F"
+        android:outlineSpotShadowColor="#3C3030"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/SclName"
+            android:layout_width="293dp"
+            android:layout_height="42dp"
+            android:layout_weight="1"
+            android:fontFamily="@font/trochut_bold"
+            android:paddingStart="15dp"
+            android:text="@string/s_s_high_school"
+            android:textAlignment="viewStart"
+            android:textColor="#FEFEFE"
+            android:textSize="30sp"
+            tools:ignore="RtlSymmetry,TextSizeCheck" />
+
+        <ImageView
+            android:id="@+id/notficationicon"
+            android:layout_width="15dp"
+            android:layout_height="35dp"
+            android:layout_weight="1"
+            android:contentDescription="@string/todo"
+            app:srcCompat="@drawable/ringing" />
+
+    </LinearLayout>
+
+    <ScrollView
+        android:id="@+id/DetailBox"
+        android:layout_width="match_parent"
+        android:layout_height="610dp"
+        android:layout_marginTop="60dp"
+        android:outlineProvider="bounds"
+        android:outlineSpotShadowColor="#000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/HeadLayout"
+        app:layout_constraintVertical_bias="0.0
+">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/ScrolInnerLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:outlineAmbientShadowColor="#000000"
+            android:outlineSpotShadowColor="#000000"
+            android:visibility="visible">
+
+
+            <FrameLayout
+                android:id="@+id/ProfleFrame"
+                android:layout_width="match_parent"
+                android:layout_height="181dp"
+                app:layout_constraintBottom_toBottomOf="parent">
+
+                <View
+                    android:id="@+id/PrfileBackClr"
+                    android:layout_width="match_parent"
+                    android:layout_height="84dp"
+                    android:background="#225C6E" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:outlineAmbientShadowColor="#000000"
+
+                    android:outlineSpotShadowColor="#0B0B0B">
+
+
+                    <ImageView
+                        android:id="@+id/imageView2"
+                        android:layout_width="204dp"
+                        android:layout_height="115dp"
+                        android:layout_marginTop="16dp"
+                        android:contentDescription="@string/stndproflipic"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.0"
+                        app:srcCompat="@drawable/academic" />
+
+                    <TextView
+                        android:id="@+id/StudentName"
+                        android:layout_width="367dp"
+                        android:layout_height="31dp"
+                        android:fontFamily="@font/alegreya_sans_sc_bold"
+                        android:text="@string/ruddarm_maurya"
+                        android:textAlignment="center"
+                        android:textSize="25sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+
+                    <View
+                        android:id="@+id/ProfileDivder"
+                        android:layout_width="416dp"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="5dp"
+                        android:background="?android:attr/listDivider"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/StudentName" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </FrameLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/BottomNavLayout"
+        android:layout_width="match_parent"
+        android:layout_height="59dp"
+        android:background="#225C6E"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <Button
+            android:id="@+id/ProfileBtn"
+            android:layout_width="110dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Button"
+            app:cornerRadius="0dp" />
+
+        <Button
+            android:id="@+id/trackBtn"
+            android:layout_width="110dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Button"
+            app:cornerRadius="0dp" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
