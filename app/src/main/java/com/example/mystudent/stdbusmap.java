@@ -4,28 +4,36 @@ import androidx.fragment.app.FragmentActivity;
 
 import android.os.Bundle;
 import android.widget.Toast;
+
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
-import com.example.mystudent.databinding.ActivityBusTackMapBinding;
+import com.example.mystudent.databinding.ActivityStdbusmapBinding;
 
-public class BusTackMap extends FragmentActivity implements OnMapReadyCallback {
+public class stdbusmap extends FragmentActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
-    private ActivityBusTackMapBinding binding;
+    private ActivityStdbusmapBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = ActivityBusTackMapBinding.inflate(getLayoutInflater());
+
+        binding = ActivityStdbusmapBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-        Toast.makeText(BusTackMap.this,"Creating Map",Toast.LENGTH_SHORT).show();
+
+        // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
-        mapFragment.getMapAsync(this);
+       try
+       {
+           mapFragment.getMapAsync(this);
+       }catch (NullPointerException ex) {
+           Toast.makeText(stdbusmap.this, "This map is null", Toast.LENGTH_SHORT).show();
+       }
     }
 
     /**
@@ -38,13 +46,13 @@ public class BusTackMap extends FragmentActivity implements OnMapReadyCallback {
      * installed Google Play services and returned to the app.
      */
     @Override
-    public void onMapReady( GoogleMap googleMap) {
+    public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
-
         // Add a marker in Sydney and move the camera
         LatLng sydney = new LatLng(19.021037, 73.011422);
         mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+        mMap.animateCamera(CameraUpdateFactory.newLatLng(sydney));
         mMap.animateCamera(CameraUpdateFactory.zoomBy(16));
     }
 }

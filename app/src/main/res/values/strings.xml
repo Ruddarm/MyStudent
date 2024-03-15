@@ -10,4 +10,8 @@
     <string name="ruddarm_maurya">Ruddarm Maurya</string>
     <string name="stndproflipic">StndProflipic</string>
     <string name="title_activity_bus_tack_map">BusTackMap</string>
+    <string name="profile">Profile</string>
+    <string name="bus_track">Bus Track</string>
+    <string name="title_activity_buslocationactivity">buslocationactivity</string>
+    <string name="title_activity_stdbusmap">stdbusmap</string>
 </resources>
