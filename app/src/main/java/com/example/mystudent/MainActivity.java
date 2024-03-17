@@ -48,7 +48,8 @@ public class MainActivity extends AppCompatActivity {
         DriveLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(MainActivity.this,"Driver ko login krna hai ?",Toast.LENGTH_SHORT).show();
+                Intent drivelogin= new Intent(MainActivity.this,DriverLogin.class);
+                startActivity(drivelogin);
             }
         });
     }

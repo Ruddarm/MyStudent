@@ -1,9 +1,20 @@
 package com.example.mystudent;
 
+import android.location.Location;
+
 import java.io.Serializable;
 
 public class busDetails implements Serializable {
     private String busNumber,DriverName,DriverNumber,DriverID;
+    Location buslocation ;
+
+    public Location getBuslocation() {
+        return buslocation;
+    }
+
+    public void setBuslocation(Location buslocation) {
+        this.buslocation = buslocation;
+    }
 
     private  boolean isAssign,busStatus;
     public boolean isBusStatus() {

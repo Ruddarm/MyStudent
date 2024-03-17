@@ -33,8 +33,18 @@
         -->
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyBFTICyPusF8JuZ7CKv6iknKAO7Ozq_7-g" />
+            android:value="YOUR_API_KEY" />
 
+        <activity
+            android:name=".driverMapact"
+            android:exported="false"
+            android:label="@string/title_activity_driver_mapact"
+            android:parentActivityName=".driverMapact"
+            />
+        <activity
+            android:name=".DriverLogin"
+            android:exported="false"
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".stdbusmap"
             android:exported="false"
