@@ -30,4 +30,7 @@
     <string name="parentnamelabel">Name</string>
     <string name="father">Father</string>
     <string name="emailfeild">rammaheshmourya@gmail.com</string>
+    <string name="buslogdesc">Buslog</string>
+    <string name="callactionbtn">callactionbtn</string>
+    <string name="phncallbtn">phncallbtn</string>
 </resources>

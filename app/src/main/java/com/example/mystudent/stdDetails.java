@@ -10,6 +10,8 @@ public class stdDetails implements Serializable {
     private String stdbatch;
     private String dob;
     private String bloodgrup;
+
+    private  busDetails bus;
     private String parentName,ParentRelation,ParentNumber,ParentEmail;
 
     public String getParentName() {
@@ -60,8 +62,18 @@ public class stdDetails implements Serializable {
         this.gender = gender;
     }
 
+    public busDetails getBus() {
+        return bus;
+    }
+
+    public void setBus(busDetails bus) {
+        this.bus = bus;
+    }
+
     private String gender;
-    stdDetails(){}
+    stdDetails(){
+        bus= new busDetails();
+    }
 
     public String getDob() {
         return dob;

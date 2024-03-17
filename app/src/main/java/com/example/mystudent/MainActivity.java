@@ -76,9 +76,19 @@ public class MainActivity extends AppCompatActivity {
                                 mystudent.setParentNumber(prntdata.child("contactnumber").getValue(String.class));
                                 mystudent.setParentRelation(prntdata.child("relation").getValue(String.class));
                             }
+                            DataSnapshot busdata = snapshot.child("BusDetials");
+                            if(busdata.exists()){
+                                    boolean assign = Boolean.TRUE.equals(busdata.child("BusAssign").getValue(Boolean.class));
+                                    mystudent.getBus().setAssign(assign);
+                                    if(assign){
+                                        mystudent.getBus().setDriverID(busdata.child("DriveID").getValue(String.class));
+                                    }
+                            }
+                            Toast.makeText(MainActivity.this,mystudent.getBus().getDriverID(),Toast.LENGTH_SHORT).show();
                             Intent homepageIntent =new Intent(MainActivity.this, HomePage.class);
                             homepageIntent.putExtra("StudentDetails",mystudent);
                             startActivity(homepageIntent);
+                            finish();
 
                         }else {
 //                            Toast.makeText(MainActivity.this,"Invalid Details",Toast.LENGTH_SHORT).show();
@@ -94,7 +104,7 @@ public class MainActivity extends AppCompatActivity {
                             WarnLabel.setVisibility(View.VISIBLE);
                     }
                 }else {
-                    Toast.makeText(MainActivity.this,"Error while connecting Database",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this,"InValid UserName",Toast.LENGTH_SHORT).show();
                 }
 
             }

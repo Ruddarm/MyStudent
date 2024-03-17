@@ -1,5 +1,6 @@
 package com.example.mystudent;
 
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentActivity;
 
 import android.os.Bundle;
@@ -13,7 +14,7 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.example.mystudent.databinding.ActivityStdbusmapBinding;
 
-public class stdbusmap extends FragmentActivity implements OnMapReadyCallback {
+public class stdbusmap extends AppCompatActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
     private ActivityStdbusmapBinding binding;
@@ -28,12 +29,12 @@ public class stdbusmap extends FragmentActivity implements OnMapReadyCallback {
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
-       try
-       {
-           mapFragment.getMapAsync(this);
-       }catch (NullPointerException ex) {
-           Toast.makeText(stdbusmap.this, "This map is null", Toast.LENGTH_SHORT).show();
-       }
+        try
+        {
+            mapFragment.getMapAsync(this);
+        }catch (NullPointerException ex) {
+            Toast.makeText(stdbusmap.this, "This map is null", Toast.LENGTH_SHORT).show();
+        }
     }
 
     /**

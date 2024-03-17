@@ -8,14 +8,22 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 public class HomePage extends AppCompatActivity {
     TextView Nameview,usernameview,batchview,classview,genderview,bloodgrupview,dobview,parentNameView,parentRelationView;
     TextView parentNumberView,parentemailView;
+    stdDetails mystd;
+
+    DatabaseReference dbr;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_page);
+         mystd= (stdDetails) getIntent().getParcelableExtra("StudentDetails",stdDetails.class);
+
         Nameview=findViewById(R.id.StudentName);
         usernameview = findViewById(R.id.UsernameFeild);
         batchview= findViewById(R.id.batchfeild);
@@ -28,7 +36,6 @@ public class HomePage extends AppCompatActivity {
         parentNumberView=findViewById(R.id.ParentNumberFeild);
         parentemailView=findViewById(R.id.gaurdainemailFeild);
         Button bustrackbtn = findViewById(R.id.trackBtn);
-        stdDetails mystd= (stdDetails) getIntent().getParcelableExtra("StudentDetails",stdDetails.class);
         if(mystd!=null){
             Nameview.setText(mystd.getName());
             usernameview.setText(mystd.getUsername());
@@ -49,6 +56,7 @@ public class HomePage extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent mapIntent = new Intent(HomePage.this,stdbusmap.class);
+//                mapIntent.putExtra("bus",mystd.getBus());
                 startActivity(mapIntent);
             }
         });
