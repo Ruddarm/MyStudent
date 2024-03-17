@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <uses-feature
+        android:name="android.hardware.telephony"
+        android:required="false" />
+
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
@@ -34,8 +39,7 @@
             android:name=".stdbusmap"
             android:exported="false"
             android:label="@string/title_activity_stdbusmap"
-            android:parentActivityName=".HomePage"
-            />
+            android:parentActivityName=".HomePage" />
         <activity
             android:name=".HomePage"
             android:exported="false"

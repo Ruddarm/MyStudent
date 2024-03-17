@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
     stdDetails mystudent;
     EditText usernamefeild,pswdfeild;
     TextView WarnLabel;
+    TextView DriveLogin;
     DatabaseReference mystdDBRef;
 
 
@@ -33,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Button loginbtn = findViewById(R.id.LoginBtn);
+        DriveLogin = findViewById(R.id.DriverLogView);
         mystudent=new stdDetails();
         WarnLabel=findViewById(R.id.loginErrroLabel);
         WarnLabel.setVisibility(View.INVISIBLE);
@@ -41,6 +43,12 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 isValidUser();
 
+            }
+        });
+        DriveLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(MainActivity.this,"Driver ko login krna hai ?",Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -84,7 +92,6 @@ public class MainActivity extends AppCompatActivity {
                                         mystudent.getBus().setDriverID(busdata.child("DriveID").getValue(String.class));
                                     }
                             }
-                            Toast.makeText(MainActivity.this,mystudent.getBus().getDriverID(),Toast.LENGTH_SHORT).show();
                             Intent homepageIntent =new Intent(MainActivity.this, HomePage.class);
                             homepageIntent.putExtra("StudentDetails",mystudent);
                             startActivity(homepageIntent);

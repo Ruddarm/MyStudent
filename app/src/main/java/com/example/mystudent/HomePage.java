@@ -56,7 +56,7 @@ public class HomePage extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent mapIntent = new Intent(HomePage.this,stdbusmap.class);
-//                mapIntent.putExtra("bus",mystd.getBus());
+                mapIntent.putExtra("bus",mystd.getBus());
                 startActivity(mapIntent);
             }
         });

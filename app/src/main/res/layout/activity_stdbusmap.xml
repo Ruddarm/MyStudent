@@ -51,7 +51,6 @@
         android:backgroundTint="#877F7F"
         android:fontFamily="@font/alegreya_sans_sc_bold"
         android:padding="10dp"
-        android:text="MH43AB447"
         android:textAlignment="center"
         android:textColor="#FFFFFF"
         android:textSize="20sp"
@@ -82,7 +81,7 @@
             android:layout_width="256dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:src="@drawable/academic"
+            android:src="@drawable/driver"
             android:contentDescription="Busicon" />
 
         <LinearLayout
@@ -97,7 +96,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="45dp"
                 android:fontFamily="@font/alegreya_sans_sc_bold"
-                android:text="Driver Name"
                 android:textAlignment="center"
                 android:textSize="24sp" />
 

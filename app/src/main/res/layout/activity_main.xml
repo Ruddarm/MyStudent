@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#075384"
-    android:backgroundTint="#006E0E0E"
+    android:backgroundTint="#004A3939"
     tools:context=".MainActivity">
 
     <View
@@ -100,12 +100,13 @@
         android:shadowColor="#232121"
         android:shadowDx="10"
         android:text="@string/login"
+        android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/PasswordField"
-        app:layout_constraintVertical_bias="0.696" />
+        app:layout_constraintVertical_bias="0.6" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline"
@@ -135,4 +136,44 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/MyStudentText"
         app:layout_constraintVertical_bias="0.519" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="180dp"
+        android:backgroundTint="#D1C0C0"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="@+id/view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/LoginBtn"
+        app:layout_constraintVertical_bias="0.962">
+
+        <TextView
+            android:id="@+id/teacherLoginView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#6750A3"
+            android:fontFamily="sans-serif-medium"
+            android:text="AdminLogin"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textColorLink="#7C4DFF"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/DriverLogView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#6750A3"
+            android:fontFamily="sans-serif-medium"
+            android:text="Driver Login"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textColorLink="#7C4DFF"
+            android:textSize="20sp" />
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
