@@ -5,6 +5,7 @@
     android:id="@+id/LoginConstaint"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#075384"
     android:backgroundTint="#006E0E0E"
     tools:context=".MainActivity">
 
@@ -15,58 +16,65 @@
         android:background="#9CB59A"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
     <ImageView
         android:id="@+id/MyStudentLogo"
         android:layout_width="200dp"
         android:layout_height="201dp"
+        android:layout_marginTop="48dp"
         android:contentDescription="@string/app_logo"
-        app:layout_constraintBottom_toTopOf="@+id/MyStudentText"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.483"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/academic" />
 
     <TextView
         android:id="@+id/MyStudentText"
         android:layout_width="200dp"
         android:layout_height="52dp"
+        android:layout_marginTop="260dp"
         android:fontFamily="sans-serif-medium"
         android:text="@string/my_student"
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textSize="34sp"
-        app:layout_constraintBottom_toBottomOf="@+id/view"
+        app:layout_constraintBottom_toTopOf="@+id/StudentIDFeild"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.483"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/view"
-        app:layout_constraintVertical_bias="0.347"
+        app:layout_constraintVertical_bias="0.0"
         tools:ignore="TextSizeCheck" />
 
     <EditText
-        android:id="@+id/StudentID"
+        android:id="@+id/StudentIDFeild"
         android:layout_width="297dp"
-        android:layout_height="58dp"
-        android:layout_marginTop="20dp"
+        android:layout_height="60dp"
+        android:layout_marginBottom="408dp"
         android:ems="10"
         android:fontFamily="sans-serif-black"
         android:hint="@string/enter_student_id"
         android:importantForAutofill="no"
         android:inputType="text"
+        android:padding="5dp"
         android:textColorHint="#424242"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/MyStudentText" />
+        app:layout_constraintTop_toBottomOf="@+id/MyStudentLogo"
+        app:layout_constraintVertical_bias="0.715" />
 
     <EditText
-        android:id="@+id/editTextTextPassword"
+        android:id="@+id/PasswordField"
         android:layout_width="297dp"
-        android:layout_height="58dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginBottom="272dp"
         android:ems="10"
         android:fontFamily="sans-serif-black"
         android:hint="@string/enter_password"
@@ -76,32 +84,35 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/StudentID"
-        app:layout_constraintVertical_bias="0.041" />
+        app:layout_constraintTop_toBottomOf="@+id/StudentIDFeild"
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/LoginBtn"
         android:layout_width="203dp"
         android:layout_height="54dp"
-        android:layout_marginBottom="68dp"
-        android:background="@drawable/rounded_bottom"
+        android:layout_marginBottom="160dp"
+        android:background="#075384"
+        android:backgroundTint="#075384"
+        android:elevation="10dp"
         android:fontFamily="sans-serif-black"
         android:radius="50dp"
         android:shadowColor="#232121"
+        android:shadowDx="10"
         android:text="@string/login"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.475"
+        app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword"
-        app:layout_constraintVertical_bias="0.298" />
+        app:layout_constraintTop_toBottomOf="@+id/PasswordField"
+        app:layout_constraintVertical_bias="0.696" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_begin="20dp" />
+        app:layout_constraintGuide_begin="395dp" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline2"
@@ -109,4 +120,19 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_begin="20dp" />
+
+    <TextView
+        android:id="@+id/loginErrroLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="84dp"
+        android:fontFamily="sans-serif-condensed-light"
+        android:textColor="#FF0000"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/StudentIDFeild"
+        app:layout_constraintEnd_toStartOf="@+id/guideline"
+        app:layout_constraintHorizontal_bias="0.518"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/MyStudentText"
+        app:layout_constraintVertical_bias="0.519" />
 </androidx.constraintlayout.widget.ConstraintLayout>

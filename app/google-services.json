@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "520731830413",
+    "firebase_url": "https://mystudent-d7c60-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "mystudent-d7c60",
+    "storage_bucket": "mystudent-d7c60.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:520731830413:android:a836a0d5862ad6a5ba9ac4",
+        "android_client_info": {
+          "package_name": "com.example.mystudent"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCbzEJ-IznZSUAOkk3jS5GZdKa8-KHKk14"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

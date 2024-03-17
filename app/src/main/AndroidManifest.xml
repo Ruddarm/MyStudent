@@ -36,12 +36,6 @@
             android:label="@string/title_activity_stdbusmap"
             android:parentActivityName=".HomePage"
             />
-
-        <activity
-            android:name=".BusTackMap"
-            android:exported="false"
-            android:label="@string/title_activity_bus_tack_map"
-            android:parentActivityName=".HomePage" />
         <activity
             android:name=".HomePage"
             android:exported="false"

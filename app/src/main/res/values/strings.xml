@@ -14,4 +14,20 @@
     <string name="bus_track">Bus Track</string>
     <string name="title_activity_buslocationactivity">buslocationactivity</string>
     <string name="title_activity_stdbusmap">stdbusmap</string>
+    <string name="username">Username</string>
+    <string name="class2">class</string>
+    <string name="batch">2022–20025</string>
+    <string name="usernamefeild">ruddarm123</string>
+    <string name="classfeild">BCA SY</string>
+    <string name="general_detials">General Detials</string>
+    <string name="personal_details">Personal Details</string>
+    <string name="date_of_birth">Date of Birth</string>
+    <string name="gender">Gender</string>
+    <string name="blood_group">Blood Group</string>
+    <string name="dobfeild">24/10/2002</string>
+    <string name="genderfeild">Male</string>
+    <string name="blodgrupfeild">B+</string>
+    <string name="parentnamelabel">Name</string>
+    <string name="father">Father</string>
+    <string name="emailfeild">rammaheshmourya@gmail.com</string>
 </resources>

@@ -53,6 +53,7 @@ public class stdbusmap extends FragmentActivity implements OnMapReadyCallback {
         mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
         mMap.animateCamera(CameraUpdateFactory.newLatLng(sydney));
+        Toast.makeText(stdbusmap.this,"Map is Ready",Toast.LENGTH_SHORT).show();
         mMap.animateCamera(CameraUpdateFactory.zoomBy(16));
     }
 }
