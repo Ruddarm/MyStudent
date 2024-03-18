@@ -33,7 +33,7 @@
         -->
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="YOUR_API_KEY" />
+            android:value="AIzaSyBFTICyPusF8JuZ7CKv6iknKAO7Ozq_7-g" />
 
         <activity
             android:name=".driverMapact"

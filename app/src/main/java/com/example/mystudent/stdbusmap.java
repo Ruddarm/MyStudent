@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentActivity;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
@@ -14,6 +15,7 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.CircleOptions;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.example.mystudent.databinding.ActivityStdbusmapBinding;
@@ -24,6 +26,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.Objects;
+
 
 public class stdbusmap extends AppCompatActivity implements OnMapReadyCallback {
 
@@ -33,6 +37,7 @@ public class stdbusmap extends AppCompatActivity implements OnMapReadyCallback {
     private FloatingActionButton callbtn;
     private  busDetails stdbus;
     DatabaseReference drf;
+    CircleOptions mpcrcl;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -94,6 +99,43 @@ public class stdbusmap extends AppCompatActivity implements OnMapReadyCallback {
         });
 
     }
+    public  void GetLocation(){
+        drf=FirebaseDatabase.getInstance().getReference("BusDriver").child(stdbus.getDriverID()).child("crnLoc");
+        drf.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if (snapshot.exists()) {
+                    double lat = Double.parseDouble(Objects.requireNonNull(snapshot.child("lat").getValue(String.class)));
+                    double lang = Double.parseDouble(Objects.requireNonNull(snapshot.child("lang").getValue(String.class)));
+                    LatLng crnlocaiton = new LatLng(lat, lang);
+
+                    if(mpcrcl==null){
+                        mpcrcl = new CircleOptions()
+                                .center(crnlocaiton)
+                                .radius(20) // Radius in meters
+                                .strokeWidth(2)
+                                .strokeColor(0xFF0000FF) // Blue color
+                                .fillColor(0x300000FF);
+                        mMap.addCircle(mpcrcl);
+
+
+                    }else {
+                        mpcrcl.center(crnlocaiton);
+
+                    }
+                    // Semi-transparent blue
+                    mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(crnlocaiton, 18));
+
+                }
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+
+    }
 
     /**
      * Manipulates the map once available.
@@ -108,12 +150,12 @@ public class stdbusmap extends AppCompatActivity implements OnMapReadyCallback {
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
         // Add a marker in Sydney and move the camera
-        LatLng sydney = new LatLng(19.021037, 73.011422);
-        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
-        mMap.animateCamera(CameraUpdateFactory.newLatLng(sydney));
-        mMap.animateCamera(CameraUpdateFactory.zoomBy(16));
+//        mMap.addMarker(new MarkerOptions().position(sydney).title("Last loaction"));
+//        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+//        mMap.animateCamera(CameraUpdateFactory.newLatLng(sydney));
+//        mMap.animateCamera(CameraUpdateFactory.zoomBy(16));
         Toast.makeText(stdbusmap.this,"Map is Ready",Toast.LENGTH_SHORT).show();
+        GetLocation();
 
     }
 }
