@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F5F5"
+    tools:context=".addStudentGeneralDetials">
+
+    <ScrollView
+        android:id="@+id/scrollView3"
+        android:layout_width="0dp"
+        android:layout_height="321dp"
+        android:padding="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="344dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:background="@drawable/buslaybackground"
+            android:elevation="5dp"
+            android:orientation="vertical"
+            android:padding="25dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:layout_editor_absoluteY="334dp">
+
+            <EditText
+                android:id="@+id/StdNameFeild"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:ems="10"
+                android:fontFamily="@font/alegreya_sans_sc_bold"
+                android:hint="Student Name"
+                android:inputType="text" />
+
+            <EditText
+                android:id="@+id/StdClassFeild"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:ems="10"
+                android:fontFamily="@font/alegreya_sans_sc_bold"
+                android:hint="Class"
+                android:inputType="text" />
+
+            <EditText
+                android:id="@+id/stdBatchFeild"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:ems="10"
+                android:fontFamily="@font/alegreya_sans_sc_bold"
+                android:hint="Batch"
+                android:inputType="text" />
+
+            <EditText
+                android:id="@+id/stdUserNameFeild"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:ems="10"
+                android:fontFamily="@font/alegreya_sans_sc_bold"
+                android:hint="User Name"
+                android:inputType="text" />
+
+            <EditText
+                android:id="@+id/editTextTextPassword2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:ems="10"
+                android:fontFamily="@font/alegreya_sans_sc_bold"
+                android:hint="Create Password"
+                android:inputType="textPassword" />
+
+            <EditText
+                android:id="@+id/editTextTextPassword3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:ems="10"
+                android:fontFamily="@font/alegreya_sans_sc_bold"
+                android:hint="Confirm Password"
+                android:inputType="textPassword" />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="141dp"
+        android:layout_height="138dp"
+        android:layout_marginTop="92dp"
+        android:elevation="8dp"
+        app:layout_constraintEnd_toEndOf="@+id/view4"
+        app:layout_constraintStart_toStartOf="@+id/view4"
+        app:layout_constraintTop_toBottomOf="@+id/HeadLayout"
+        app:srcCompat="@drawable/academic" />
+
+    <View
+        android:id="@+id/view4"
+        android:layout_width="0dp"
+        android:layout_height="150dp"
+        android:layout_margin="25dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/buslaybackground"
+        android:elevation="5dp"
+        android:shadowColor="@color/black"
+        android:shadowDx="-20"
+        android:shadowDy="20"
+        android:shadowRadius="8"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/HeadLayout" />
+
+    <LinearLayout
+        android:id="@+id/HeadLayout"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="#225C6E"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:outlineAmbientShadowColor="#271F1F"
+        android:outlineSpotShadowColor="#3C3030"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/SclName"
+            android:layout_width="293dp"
+            android:layout_height="42dp"
+            android:layout_weight="1"
+            android:fontFamily="@font/trochut_bold"
+            android:paddingStart="15dp"
+            android:text="@string/s_s_high_school"
+            android:textAlignment="viewStart"
+            android:textColor="#FEFEFE"
+            android:textSize="30sp"
+            tools:ignore="RtlSymmetry,TextSizeCheck" />
+
+        <ImageView
+            android:id="@+id/notficationicon"
+            android:layout_width="15dp"
+            android:layout_height="35dp"
+            android:layout_weight="1"
+            android:contentDescription="@string/todo"
+            app:srcCompat="@drawable/ringing" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/NextTOGenerDetailsBtn"
+        android:layout_width="147dp"
+        android:layout_height="53dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="88dp"
+        android:text="Next"
+        app:cornerRadius="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.939"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scrollView3" />
+
+    <TextView
+        android:id="@+id/GeneralDetialsLabel"
+        android:layout_width="204dp"
+        android:layout_height="25dp"
+        android:fontFamily="@font/alegreya_sans_sc_bold"
+        android:text="General Detials"
+        android:textAlignment="viewStart"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.132"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="319dp" />
+
+    <TextView
+        android:id="@+id/generalDetialsLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:elevation="10dp"
+        android:fontFamily="@font/alegreya_sans_sc_bold"
+        android:text="Create Student Profile"
+        android:textAlignment="viewStart"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/imageView5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/HeadLayout"
+        app:layout_constraintVertical_bias="1.0" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

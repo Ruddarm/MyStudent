@@ -26,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
     EditText usernamefeild,pswdfeild;
     TextView WarnLabel;
     TextView DriveLogin;
+    TextView AdminLogin;
     DatabaseReference mystdDBRef;
 
 
@@ -34,7 +35,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Button loginbtn = findViewById(R.id.LoginBtn);
+
         DriveLogin = findViewById(R.id.DriverLogView);
+        AdminLogin = findViewById(R.id.teacherLoginView);
         mystudent=new stdDetails();
         WarnLabel=findViewById(R.id.loginErrroLabel);
         WarnLabel.setVisibility(View.INVISIBLE);
@@ -42,7 +45,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 isValidUser();
-
             }
         });
         DriveLogin.setOnClickListener(new View.OnClickListener() {
@@ -52,6 +54,14 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(drivelogin);
             }
         });
+        AdminLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent Adminlogin = new Intent(MainActivity.this, AdminLogin.class);
+                startActivity(Adminlogin);
+            }
+        });
+
     }
     public void isValidUser(){
         usernamefeild= findViewById(R.id.StudentIDFeild);

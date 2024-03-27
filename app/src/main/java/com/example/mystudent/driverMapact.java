@@ -35,7 +35,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.util.HashMap;
 import java.util.Map;
 
-public class driverMapact extends FragmentActivity implements OnMapReadyCallback {
+public class driverMapact extends FragmentActivity implements OnMapReadyCallback  {
 
     private GoogleMap mMap;
     public static int reqcode = 100;
@@ -139,7 +139,7 @@ public class driverMapact extends FragmentActivity implements OnMapReadyCallback
                     lat=location.getLatitude();
                     lang=location.getLongitude();
                     LatLng sydney = new LatLng(lat, lang);
-                    Toast.makeText(driverMapact.this, "stuck "+sydney.latitude, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(driverMapact.this, "Current "+sydney.latitude, Toast.LENGTH_SHORT).show();
                     mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(sydney, 16));
                     mMap.addMarker(new MarkerOptions().position(sydney).title("You are here"));
                     crnloc loc = new crnloc();
@@ -161,8 +161,7 @@ public class driverMapact extends FragmentActivity implements OnMapReadyCallback
         public void onLocationChanged(@NonNull Location location) {
               lat=location.getLatitude();
               lang=location.getLongitude();
-              Toast.makeText(driverMapact.this, "Lat  is "+lat, Toast.LENGTH_SHORT).show();
-              crnloc loc = new crnloc();
+              Toast.makeText(driverMapact.this, "location is changed "+lat, Toast.LENGTH_SHORT).show();
               Map<String, Object> locupdate = new HashMap<>();
               locupdate.put("lat", ""+lat);
               locupdate.put("lang", ""+lang);
@@ -170,7 +169,6 @@ public class driverMapact extends FragmentActivity implements OnMapReadyCallback
         }
 
     };
-
     }
 
     @Override

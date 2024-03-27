@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#9CB59A"
-    android:outlineSpotShadowColor="#000000">
+    android:background="#9FB6B6"
+    tools:context=".AdminHome">
 
     <LinearLayout
         android:id="@+id/HeadLayout"
@@ -53,7 +53,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/HeadLayout"
-        app:layout_constraintVertical_bias="0.0" >
+        app:layout_constraintVertical_bias="0.0">
 
         <LinearLayout
             android:id="@+id/InnerLinearLayout"
@@ -101,14 +101,14 @@
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent"
                             app:layout_constraintVertical_bias="0.0"
-                            app:srcCompat="@drawable/shinchan" />
+                            app:srcCompat="@drawable/teacher" />
 
                         <TextView
                             android:id="@+id/StudentName"
                             android:layout_width="367dp"
                             android:layout_height="31dp"
                             android:fontFamily="@font/alegreya_sans_sc_bold"
-                            android:text="@string/ruddarm_maurya"
+                            android:text="Prof. Ohinam"
                             android:textAlignment="center"
                             android:textSize="26sp"
                             app:layout_constraintBottom_toBottomOf="parent"
@@ -165,128 +165,6 @@
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
-                    android:id="@+id/GenralDetailsLabel"
-                    android:layout_width="0dp"
-                    android:layout_height="28dp"
-                    android:textSize="20sp"
-                    android:text="Gaurdain Details"
-                    android:fontFamily="@font/alegreya_sans_sc_bold"
-                    android:paddingStart="10dp"
-                    app:layout_constraintBottom_toTopOf="@+id/GarudianLayout"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/prsnldetaillayout"
-                    tools:ignore="TextSizeCheck"
-                    />
-
-                <LinearLayout
-                    android:id="@+id/GarudianLayout"
-                    android:layout_width="match_parent"
-                    android:layout_height="130dp"
-                    android:background="#FFFFFF"
-                    android:orientation="horizontal"
-                    android:paddingStart="25dp"
-                    android:paddingTop="10dp"
-                    android:paddingEnd="25dp"
-                    android:paddingBottom="10dp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="1.0"
-                    app:layout_constraintStart_toStartOf="parent"
-                    tools:ignore="TextSizeCheck">
-
-                    <LinearLayout
-                        android:id="@+id/gardLabelLayout"
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:id="@+id/guradiannamelabel"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:fontFamily="sans-serif-black"
-                            android:text="Name"
-                            android:textSize="16sp" />
-
-                        <TextView
-                            android:id="@+id/RealitonLabel"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="sans-serif-black"
-                            android:layout_weight="1"
-                            android:text="Relation"
-                            android:textSize="16sp" />
-
-                        <TextView
-                            android:id="@+id/numberLabel"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:fontFamily="sans-serif-black"
-                            android:text="Contact Number"
-                            android:textSize="16sp" />
-
-                        <TextView
-                            android:id="@+id/emailLabel"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:fontFamily="sans-serif-black"
-                            android:text="Email"
-                            android:textSize="16sp" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_marginStart="15dp"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:id="@+id/guardainnamefeild"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:fontFamily="sans-serif-medium"
-                            android:text="Ram Mahesh "
-                            android:textAlignment="center"
-                            android:textSize="16sp" />
-
-                        <TextView
-                            android:id="@+id/realtionFeild"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:fontFamily="sans-serif-medium"
-                            android:text="@string/father"
-                            android:textAlignment="center"
-                            android:textSize="16sp" />
-
-                        <TextView
-                            android:id="@+id/ParentNumberFeild"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="sans-serif-medium"
-                            android:text="8369517140"
-                            android:layout_weight="1"
-                            android:textAlignment="center"
-                            android:textSize="16sp" />
-
-                        <TextView
-                            android:id="@+id/gaurdainemailFeild"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="sans-serif-medium"
-                            android:text="@string/emailfeild"
-                            android:layout_weight="1"
-                            android:textAlignment="center"
-                            android:textSize="14sp" />
-                    </LinearLayout>
-                </LinearLayout>
 
                 <LinearLayout
                     android:id="@+id/prsnldetaillayout"
@@ -411,7 +289,7 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:fontFamily="sans-serif-black"
-                            android:text="@string/class2"
+                            android:text="Designation"
                             android:textAlignment="textStart"
                             android:textSize="16sp" />
 
@@ -421,7 +299,7 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:fontFamily="sans-serif-black"
-                            android:text="Batch"
+                            android:text="Joining Year"
                             android:textAlignment="textStart"
                             android:textSize="16sp" />
                     </LinearLayout>
@@ -466,44 +344,28 @@
         </LinearLayout>
     </ScrollView>
 
-    <LinearLayout
-        android:id="@+id/BottomNavLayout"
-        android:layout_width="match_parent"
-        android:layout_height="59dp"
-        android:background="#225C6E"
-        android:orientation="horizontal"
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/AddStuentFAB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="0dp"
+        android:layout_marginBottom="48dp"
+        android:clickable="true"
+        android:contentDescription="@string/phncallbtn"
+        android:padding="0dp"
+        android:scaleType="center"
+        android:src="@android:drawable/ic_menu_add"
+        app:backgroundTint="#0DD182"
+        app:borderWidth="0dp"
+        app:elevation="6dp"
+        app:fabSize="normal"
+        app:layout_anchorGravity="bottom|end"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.918"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/HeadLayout"
-        app:layout_constraintVertical_bias="1.0">
-
-        <Button
-            android:id="@+id/ProfileBtn"
-            style="?android:attr/buttonBarButtonStyle"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:fontFamily="sans-serif-condensed"
-            android:text="@string/profile"
-            android:textColor="#B39DDB"
-            android:textSize="20sp"
-            app:cornerRadius="0dp"
-            tools:ignore="VisualLintButtonSize" />
-
-        <Button
-            android:id="@+id/trackBtn"
-            style="?android:attr/buttonBarButtonStyle"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:fontFamily="sans-serif-condensed"
-            android:text="@string/bus_track"
-            android:textColor="#F2EBEB"
-            android:textSize="20sp"
-            app:cornerRadius="0dp"
-            tools:ignore="VisualLintButtonSize" />
-    </LinearLayout>
+        app:layout_constraintTop_toBottomOf="@+id/DetailBox"
+        app:layout_constraintVertical_bias="0.705"
+        app:maxImageSize="50dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

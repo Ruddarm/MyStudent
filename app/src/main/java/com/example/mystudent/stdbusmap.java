@@ -15,10 +15,13 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptor;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.CircleOptions;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.example.mystudent.databinding.ActivityStdbusmapBinding;
+import com.google.android.gms.maps.model.PolylineOptions;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -38,6 +41,8 @@ public class stdbusmap extends AppCompatActivity implements OnMapReadyCallback {
     private  busDetails stdbus;
     DatabaseReference drf;
     CircleOptions mpcrcl;
+    PolylineOptions busroute;
+    MarkerOptions busicon;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -100,6 +105,7 @@ public class stdbusmap extends AppCompatActivity implements OnMapReadyCallback {
 
     }
     public  void GetLocation(){
+
         drf=FirebaseDatabase.getInstance().getReference("BusDriver").child(stdbus.getDriverID()).child("crnLoc");
         drf.addValueEventListener(new ValueEventListener() {
             @Override
@@ -109,21 +115,34 @@ public class stdbusmap extends AppCompatActivity implements OnMapReadyCallback {
                     double lang = Double.parseDouble(Objects.requireNonNull(snapshot.child("lang").getValue(String.class)));
                     LatLng crnlocaiton = new LatLng(lat, lang);
 
-                    if(mpcrcl==null){
-                        mpcrcl = new CircleOptions()
-                                .center(crnlocaiton)
-                                .radius(20) // Radius in meters
-                                .strokeWidth(2)
-                                .strokeColor(0xFF0000FF) // Blue color
-                                .fillColor(0x300000FF);
-                        mMap.addCircle(mpcrcl);
+//                    if(busroute==null){
+//                        mpcrcl = new CircleOptions()
+//                                .center(crnlocaiton)
+//                                .radius(20) // Radius in meters
+//                                .strokeWidth(2)
+//                                .strokeColor(0xFF0000FF) // Blue color
+//                                .fillColor(0x300000FF);
+//                        mMap.addCircle(mpcrcl);
+                        busroute=new PolylineOptions();
+                        busroute.add(crnlocaiton);
+                        busroute.color(Color.BLUE);
+                        busroute.width(5);
+                        mMap.addPolyline(busroute);
+                        if(busicon==null){
+                            busicon = new MarkerOptions().position(crnlocaiton)
+                                    .icon(BitmapDescriptorFactory.fromResource(R.drawable.busstation));
+                            mMap.addMarker(busicon);
+                        }else {
+                            mMap.addMarker(busicon);
+                        }
 
 
-                    }else {
-                        mpcrcl.center(crnlocaiton);
-
-                    }
+//                    }else {
+//                        mpcrcl.center(crnlocaiton);
+//
+//                    }
                     // Semi-transparent blue
+                    Toast.makeText(stdbusmap.this, "Location is changing", Toast.LENGTH_SHORT).show();
                     mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(crnlocaiton, 18));
 
                 }
@@ -156,6 +175,7 @@ public class stdbusmap extends AppCompatActivity implements OnMapReadyCallback {
 //        mMap.animateCamera(CameraUpdateFactory.zoomBy(16));
         Toast.makeText(stdbusmap.this,"Map is Ready",Toast.LENGTH_SHORT).show();
         GetLocation();
+
 
     }
 }
