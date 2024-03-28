@@ -112,7 +112,6 @@ public class MainActivity extends AppCompatActivity {
 //                            Toast.makeText(MainActivity.this,"Invalid Details",Toast.LENGTH_SHORT).show();
                             WarnLabel.setText("Invalid password");
                             WarnLabel.setVisibility(View.VISIBLE);
-                            return;
 
                         }
 

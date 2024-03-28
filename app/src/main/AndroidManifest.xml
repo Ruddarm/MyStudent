@@ -19,18 +19,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyStudent">
+
         <activity
             android:name=".addStudentGeneralDetials"
-            android:parentActivityName=".AdminHome"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".AdminHome" />
         <activity
             android:name=".AdminHome"
-            android:parentActivityName=".MainActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".AdminLogin"
-            android:parentActivityName=".MainActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".MainActivity" />
         <!--
              TODO: Before you run your application, you need a Google Maps API key.
 

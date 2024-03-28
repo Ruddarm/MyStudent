@@ -84,6 +84,7 @@
         app:maxImageSize="120dp" />
 
     <LinearLayout
+        android:id="@+id/linearLayout4"
         android:layout_width="368dp"
         android:layout_height="wrap_content"
         android:background="@drawable/buslaybackground"

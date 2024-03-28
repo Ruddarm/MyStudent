@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -22,8 +23,7 @@ public class HomePage extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_page);
-         mystd= (stdDetails) getIntent().getParcelableExtra("StudentDetails",stdDetails.class);
-
+        mystd= (stdDetails) getIntent().getParcelableExtra("StudentDetails",stdDetails.class);
         Nameview=findViewById(R.id.StudentName);
         usernameview = findViewById(R.id.UsernameFeild);
         batchview= findViewById(R.id.batchfeild);

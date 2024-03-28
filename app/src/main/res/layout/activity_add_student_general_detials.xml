@@ -4,120 +4,386 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_gravity="center"
     android:background="#F5F5F5"
     tools:context=".addStudentGeneralDetials">
 
     <ScrollView
-        android:id="@+id/scrollView3"
         android:layout_width="0dp"
-        android:layout_height="321dp"
-        android:padding="5dp"
+        android:layout_height="0dp"
+        android:paddingBottom="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="344dp">
+        app:layout_constraintTop_toBottomOf="@+id/HeadLayout">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="20dp"
-            android:background="@drawable/buslaybackground"
-            android:elevation="5dp"
+            android:gravity="end"
             android:orientation="vertical"
-            android:padding="25dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            tools:layout_editor_absoluteY="334dp">
+            tools:layout_editor_absoluteY="61dp">
 
-            <EditText
-                android:id="@+id/StdNameFeild"
+            <LinearLayout
+                android:id="@+id/linearLayout3"
+                android:layout_width="match_parent"
+                android:layout_height="195dp"
+                android:layout_margin="30dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/buslaybackground"
+                android:elevation="5dp"
+                android:gravity="center"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.491"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/HeadLayout">
+
+                <TextView
+                    android:id="@+id/GrdDetialsLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:elevation="10dp"
+                    android:fontFamily="@font/alegreya_sans_sc_bold"
+                    android:text="Create Student Profile"
+                    android:textAlignment="viewStart"
+                    android:textSize="24sp" />
+
+                <ImageView
+                    android:id="@+id/imageView5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:elevation="8dp"
+                    android:maxHeight="150dp"
+                    android:minHeight="80dp"
+                    app:srcCompat="@drawable/academic" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/GarudainDetialLabel"
+                android:layout_width="match_parent"
+                android:layout_height="25dp"
+                android:layout_marginTop="40dp"
+                android:fontFamily="@font/alegreya_sans_sc_bold"
+                android:paddingStart="20dp"
+                android:text="General Detials"
+                android:textAlignment="viewStart"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toTopOf="@+id/ScrlViewGenerDeials"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.14"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout3"
+                app:layout_constraintVertical_bias="0.075" />
+
+            <ScrollView
+                android:id="@+id/ScrlViewGenerDeials"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                app:layout_constraintBottom_toTopOf="@+id/Add_Student"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout3"
+                app:layout_constraintVertical_bias="1.0">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="20dp"
+                    android:background="@drawable/buslaybackground"
+                    android:elevation="5dp"
+                    android:orientation="vertical"
+                    android:padding="25dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:layout_editor_absoluteY="334dp">
+
+                    <EditText
+                        android:id="@+id/StdNameFeild"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:layout_marginBottom="15dp"
+                        android:ems="10"
+                        android:fontFamily="@font/alegreya_sans_sc_bold"
+                        android:hint="Student Name"
+                        android:inputType="text"
+                        android:textSize="20sp" />
+
+                    <EditText
+                        android:id="@+id/ClassFeild"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:layout_marginBottom="15dp"
+                        android:ems="10"
+                        android:fontFamily="@font/alegreya_sans_sc_bold"
+                        android:hint="Class"
+                        android:inputType="text"
+                        android:textSize="20sp" />
+
+                    <EditText
+                        android:id="@+id/BatchFeild"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:layout_marginBottom="15dp"
+                        android:ems="10"
+                        android:fontFamily="@font/alegreya_sans_sc_bold"
+                        android:hint="Batch"
+                        android:inputType="datetime|date"
+                        android:textSize="20sp" />
+
+                    <EditText
+                        android:id="@+id/stdUserNameFeild"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:layout_marginBottom="15dp"
+                        android:ems="10"
+                        android:fontFamily="@font/alegreya_sans_sc_bold"
+                        android:hint="User Name"
+                        android:inputType="text"
+                        android:textSize="20sp" />
+
+                    <EditText
+                        android:id="@+id/editTextTextPassword3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:layout_marginBottom="15dp"
+                        android:ems="10"
+                        android:fontFamily="@font/alegreya_sans_sc_bold"
+                        android:hint="Create Password"
+                        android:inputType="textPassword"
+                        android:textSize="20sp" />
+
+                    <EditText
+                        android:id="@+id/editTextTextPassword2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:layout_marginBottom="15dp"
+                        android:ems="10"
+                        android:fontFamily="@font/alegreya_sans_sc_bold"
+                        android:hint="Confirm Password"
+                        android:inputType="textPassword"
+                        android:textSize="20sp" />
+
+                </LinearLayout>
+            </ScrollView>
+
+            <TextView
+                android:id="@+id/prsnlDetialsLabel2"
+                android:layout_width="match_parent"
+                android:layout_height="25dp"
+                android:layout_marginTop="40dp"
+                android:fontFamily="@font/alegreya_sans_sc_bold"
+                android:paddingStart="20dp"
+                android:text="Personal Detials"
+                android:textAlignment="viewStart"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toTopOf="@+id/ScrlViewGenerDeials"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.14"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout3"
+                app:layout_constraintVertical_bias="0.075" />
+
+            <ScrollView
+                android:id="@+id/scrViewPrsnlDetials"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="5dp"
+                app:layout_constraintBottom_toTopOf="@+id/Add_Student"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout3"
+                app:layout_constraintVertical_bias="1.0">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="20dp"
+                    android:background="@drawable/buslaybackground"
+                    android:elevation="5dp"
+                    android:orientation="vertical"
+                    android:padding="25dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:layout_editor_absoluteY="334dp">
+
+                    <EditText
+                        android:id="@+id/StdDOBFeild"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:layout_marginBottom="15dp"
+                        android:ems="10"
+                        android:fontFamily="@font/alegreya_sans_sc_bold"
+                        android:hint="DOB DD/MM/YYY"
+                        android:inputType="datetime|date"
+                        android:textSize="20sp" />
+
+                    <EditText
+                        android:id="@+id/StdGenderFeild"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:layout_marginBottom="15dp"
+                        android:ems="10"
+                        android:fontFamily="@font/alegreya_sans_sc_bold"
+                        android:hint="Gender"
+                        android:inputType="text"
+                        android:textSize="20sp" />
+
+                    <EditText
+                        android:id="@+id/BloodFeild"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:layout_marginBottom="15dp"
+                        android:ems="10"
+                        android:fontFamily="@font/alegreya_sans_sc_bold"
+                        android:hint="Blood Group"
+                        android:inputType="text"
+                        android:textSize="20sp" />
+
+                </LinearLayout>
+            </ScrollView>
+
+            <TextView
+                android:id="@+id/garudainDetialLabel"
+                android:layout_width="match_parent"
+                android:layout_height="25dp"
+                android:layout_marginTop="40dp"
+                android:fontFamily="@font/alegreya_sans_sc_bold"
+                android:paddingStart="20dp"
+                android:text="Gaurdian Detials"
+                android:textAlignment="viewStart"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toTopOf="@+id/ScrlViewGenerDeials"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.14"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout3"
+                app:layout_constraintVertical_bias="0.075" />
+
+            <ScrollView
+                android:id="@+id/ScrlGaurdianDetils"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="5dp"
+                app:layout_constraintBottom_toTopOf="@+id/Add_Student"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout3"
+                app:layout_constraintVertical_bias="1.0">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="20dp"
+                    android:background="@drawable/buslaybackground"
+                    android:elevation="5dp"
+                    android:orientation="vertical"
+                    android:padding="25dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:layout_editor_absoluteY="334dp">
+
+                    <EditText
+                        android:id="@+id/GuardNameFeild"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:layout_marginBottom="15dp"
+                        android:ems="10"
+                        android:fontFamily="@font/alegreya_sans_sc_bold"
+                        android:hint="Gaurdain Name"
+                        android:inputType="text"
+                        android:textSize="20sp" />
+
+                    <EditText
+                        android:id="@+id/RealtionFeild"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:layout_marginBottom="15dp"
+                        android:ems="10"
+                        android:fontFamily="@font/alegreya_sans_sc_bold"
+                        android:hint="Realtion"
+                        android:inputType="text"
+                        android:textSize="20sp" />
+
+                    <EditText
+                        android:id="@+id/ContactFeild"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:layout_marginBottom="15dp"
+                        android:ems="10"
+                        android:fontFamily="@font/alegreya_sans_sc_bold"
+                        android:hint="Contact Number"
+                        android:inputType="number"
+                        android:textSize="20sp" />
+
+                    <EditText
+                        android:id="@+id/GaurdEmailFeild"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:layout_marginBottom="15dp"
+                        android:ems="10"
+                        android:fontFamily="@font/alegreya_sans_sc_bold"
+                        android:hint="Email Address"
+                        android:inputType="text|textEmailAddress"
+                        android:textSize="20sp" />
+
+                </LinearLayout>
+            </ScrollView>
+
+            <CheckBox
+                android:id="@+id/busAssignBtn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
-                android:ems="10"
                 android:fontFamily="@font/alegreya_sans_sc_bold"
-                android:hint="Student Name"
-                android:inputType="text" />
+                android:text="Is Bus Assign"
+                android:textSize="20sp" />
 
-            <EditText
-                android:id="@+id/StdClassFeild"
+            <Spinner
+                android:id="@+id/DriverID"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:ems="10"
-                android:fontFamily="@font/alegreya_sans_sc_bold"
-                android:hint="Class"
-                android:inputType="text" />
+                android:layout_margin="15dp"
+                android:background="@drawable/buslaybackground"
+                android:visibility="visible" />
 
-            <EditText
-                android:id="@+id/stdBatchFeild"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:ems="10"
-                android:fontFamily="@font/alegreya_sans_sc_bold"
-                android:hint="Batch"
-                android:inputType="text" />
-
-            <EditText
-                android:id="@+id/stdUserNameFeild"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:ems="10"
-                android:fontFamily="@font/alegreya_sans_sc_bold"
-                android:hint="User Name"
-                android:inputType="text" />
-
-            <EditText
-                android:id="@+id/editTextTextPassword2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:ems="10"
-                android:fontFamily="@font/alegreya_sans_sc_bold"
-                android:hint="Create Password"
-                android:inputType="textPassword" />
-
-            <EditText
-                android:id="@+id/editTextTextPassword3"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:ems="10"
-                android:fontFamily="@font/alegreya_sans_sc_bold"
-                android:hint="Confirm Password"
-                android:inputType="textPassword" />
+            <Button
+                android:id="@+id/Add_Student"
+                android:layout_width="147dp"
+                android:layout_height="53dp"
+                android:layout_margin="20dp"
+                android:layout_marginStart="100dp"
+                android:layout_marginEnd="0dp"
+                android:layout_marginBottom="88dp"
+                android:text="Add"
+                app:cornerRadius="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.939"
+                app:layout_constraintStart_toStartOf="parent" />
 
         </LinearLayout>
     </ScrollView>
-
-    <ImageView
-        android:id="@+id/imageView5"
-        android:layout_width="141dp"
-        android:layout_height="138dp"
-        android:layout_marginTop="92dp"
-        android:elevation="8dp"
-        app:layout_constraintEnd_toEndOf="@+id/view4"
-        app:layout_constraintStart_toStartOf="@+id/view4"
-        app:layout_constraintTop_toBottomOf="@+id/HeadLayout"
-        app:srcCompat="@drawable/academic" />
-
-    <View
-        android:id="@+id/view4"
-        android:layout_width="0dp"
-        android:layout_height="150dp"
-        android:layout_margin="25dp"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/buslaybackground"
-        android:elevation="5dp"
-        android:shadowColor="@color/black"
-        android:shadowDx="-20"
-        android:shadowDy="20"
-        android:shadowRadius="8"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/HeadLayout" />
 
     <LinearLayout
         android:id="@+id/HeadLayout"
@@ -153,47 +419,5 @@
             app:srcCompat="@drawable/ringing" />
 
     </LinearLayout>
-
-    <Button
-        android:id="@+id/NextTOGenerDetailsBtn"
-        android:layout_width="147dp"
-        android:layout_height="53dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="88dp"
-        android:text="Next"
-        app:cornerRadius="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.939"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/scrollView3" />
-
-    <TextView
-        android:id="@+id/GeneralDetialsLabel"
-        android:layout_width="204dp"
-        android:layout_height="25dp"
-        android:fontFamily="@font/alegreya_sans_sc_bold"
-        android:text="General Detials"
-        android:textAlignment="viewStart"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.132"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="319dp" />
-
-    <TextView
-        android:id="@+id/generalDetialsLabel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:elevation="10dp"
-        android:fontFamily="@font/alegreya_sans_sc_bold"
-        android:text="Create Student Profile"
-        android:textAlignment="viewStart"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/imageView5"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/HeadLayout"
-        app:layout_constraintVertical_bias="1.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

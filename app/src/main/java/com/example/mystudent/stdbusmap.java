@@ -6,8 +6,10 @@ import androidx.fragment.app.FragmentActivity;
 
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
+import android.text.Layout;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -50,11 +52,12 @@ public class stdbusmap extends AppCompatActivity implements OnMapReadyCallback {
         binding = ActivityStdbusmapBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         stdbus =(busDetails) getIntent().getParcelableExtra("bus",busDetails.class);
-        if(stdbus!=null){
+        if(stdbus.isAssign()){
+            Toast.makeText(this, "this is not nalla", Toast.LENGTH_SHORT).show();
             drf= FirebaseDatabase.getInstance().getReference("BusDriver").child(stdbus.getDriverID());
             drf.addValueEventListener(new ValueEventListener() {
                 @Override
-                public void onDataChange(DataSnapshot snapshot) {
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
                     if (snapshot.exists()){
                         stdbus.setBusNumber(snapshot.child("Bus").getValue(String.class));
                         stdbus.setDriverName(snapshot.child("DriverName").getValue(String.class));
@@ -63,7 +66,6 @@ public class stdbusmap extends AppCompatActivity implements OnMapReadyCallback {
                         SetUserDetials();
                     }else{
                         Toast.makeText(stdbusmap.this, "Bus Not Found "+stdbus.getDriverNumber(), Toast.LENGTH_SHORT).show();
-
                     }
 
                 }
@@ -75,9 +77,14 @@ public class stdbusmap extends AppCompatActivity implements OnMapReadyCallback {
                 }
             });
 
-
-
-
+        }else {
+        Toast.makeText(this, "Idher samsya hai", Toast.LENGTH_SHORT).show();
+            TextView warn = findViewById(R.id.busNotAssingLabel);
+            warn.setVisibility(View.VISIBLE);
+            Drivename = findViewById(R.id.DriverName);
+            Drivename.setText("Bus is not assign");
+            callbtn = findViewById(R.id.callactionbtn);
+            callbtn.setEnabled(false);
         }
 
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
@@ -174,7 +181,9 @@ public class stdbusmap extends AppCompatActivity implements OnMapReadyCallback {
 //        mMap.animateCamera(CameraUpdateFactory.newLatLng(sydney));
 //        mMap.animateCamera(CameraUpdateFactory.zoomBy(16));
         Toast.makeText(stdbusmap.this,"Map is Ready",Toast.LENGTH_SHORT).show();
-        GetLocation();
+        if(stdbus.isAssign()){
+           GetLocation();
+        }
 
 
     }
