@@ -51,9 +51,8 @@ public class stdbusmap extends AppCompatActivity implements OnMapReadyCallback {
 
         binding = ActivityStdbusmapBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-        stdbus =(busDetails) getIntent().getParcelableExtra("bus",busDetails.class);
+        stdbus = getIntent().getParcelableExtra("bus",busDetails.class);
         if(stdbus.isAssign()){
-            Toast.makeText(this, "this is not nalla", Toast.LENGTH_SHORT).show();
             drf= FirebaseDatabase.getInstance().getReference("BusDriver").child(stdbus.getDriverID());
             drf.addValueEventListener(new ValueEventListener() {
                 @Override

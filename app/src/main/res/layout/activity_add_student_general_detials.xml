@@ -139,6 +139,16 @@
                         android:inputType="datetime|date"
                         android:textSize="20sp" />
 
+                    <TextView
+                        android:id="@+id/UserNameWarnLabel"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-condensed-medium"
+                        android:text="username not avilable"
+                        android:textAlignment="center"
+                        android:textColor="#FF5252"
+                        tools:visibility="invisible" />
+
                     <EditText
                         android:id="@+id/stdUserNameFeild"
                         android:layout_width="match_parent"
@@ -146,13 +156,14 @@
                         android:layout_margin="10dp"
                         android:layout_marginBottom="15dp"
                         android:ems="10"
-                        android:fontFamily="@font/alegreya_sans_sc_bold"
+                        android:fontFamily="sans-serif-smallcaps"
                         android:hint="User Name"
                         android:inputType="text"
+                        android:textAllCaps="false"
                         android:textSize="20sp" />
 
                     <EditText
-                        android:id="@+id/editTextTextPassword3"
+                        android:id="@+id/stdCreatedPswd"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
@@ -163,8 +174,18 @@
                         android:inputType="textPassword"
                         android:textSize="20sp" />
 
+                    <TextView
+                        android:id="@+id/PasswordNotMatchLabel"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-condensed-medium"
+                        android:text="Password Not match"
+                        android:textAlignment="center"
+                        android:textColor="#FF5252"
+                        android:visibility="invisible" />
+
                     <EditText
-                        android:id="@+id/editTextTextPassword2"
+                        android:id="@+id/stdCnfPswd"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
@@ -312,7 +333,7 @@
                         android:textSize="20sp" />
 
                     <EditText
-                        android:id="@+id/RealtionFeild"
+                        android:id="@+id/GaurdRelationFeild"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
@@ -324,7 +345,7 @@
                         android:textSize="20sp" />
 
                     <EditText
-                        android:id="@+id/ContactFeild"
+                        android:id="@+id/GaurdContactFeild"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
@@ -354,18 +375,33 @@
                 android:id="@+id/busAssignBtn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
+                android:layout_margin="20dp"
                 android:fontFamily="@font/alegreya_sans_sc_bold"
+                android:padding="10dp"
                 android:text="Is Bus Assign"
                 android:textSize="20sp" />
 
-            <Spinner
-                android:id="@+id/DriverID"
+            <TextView
+                android:id="@+id/SelectDriverLabel"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="15dp"
+                android:fontFamily="sans-serif-medium"
+                android:text="Select Driver ID"
+                android:textAlignment="center"
+                android:textColor="#FF0000"
+                tools:visibility="invisible" />
+
+            <Spinner
+                android:id="@+id/DriverIDOption"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="25dp"
                 android:background="@drawable/buslaybackground"
-                android:visibility="visible" />
+                android:dropDownHeight="50dp"
+                android:elevation="5dp"
+                android:padding="15dp"
+                android:textSize="40sp"
+                android:visibility="invisible" />
 
             <Button
                 android:id="@+id/Add_Student"
@@ -375,6 +411,7 @@
                 android:layout_marginStart="100dp"
                 android:layout_marginEnd="0dp"
                 android:layout_marginBottom="88dp"
+                android:backgroundTint="#225C6E"
                 android:text="Add"
                 app:cornerRadius="0dp"
                 app:layout_constraintBottom_toBottomOf="parent"

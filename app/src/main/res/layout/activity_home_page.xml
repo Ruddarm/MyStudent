@@ -104,7 +104,7 @@
                             app:srcCompat="@drawable/shinchan" />
 
                         <TextView
-                            android:id="@+id/StudentName"
+                            android:id="@+id/AdminName"
                             android:layout_width="367dp"
                             android:layout_height="31dp"
                             android:fontFamily="@font/alegreya_sans_sc_bold"
@@ -126,7 +126,7 @@
                             android:background="?android:attr/listDivider"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/StudentName" />
+                            app:layout_constraintTop_toBottomOf="@+id/AdminName" />
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
                 </FrameLayout>
@@ -344,7 +344,7 @@
                         tools:ignore="TextSizeCheck">
 
                         <TextView
-                            android:id="@+id/dobFeild"
+                            android:id="@+id/AdminDOBFeild"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -353,7 +353,7 @@
                             android:textSize="16sp" />
 
                         <TextView
-                            android:id="@+id/genderfeild"
+                            android:id="@+id/AdminGender"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
 
@@ -364,7 +364,7 @@
                             android:textSize="16sp" />
 
                         <TextView
-                            android:id="@+id/bloodgrupfeild"
+                            android:id="@+id/AdminBloodGrup"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -432,7 +432,7 @@
                         android:orientation="vertical">
 
                         <TextView
-                            android:id="@+id/UsernameFeild"
+                            android:id="@+id/AdminUserName"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -441,7 +441,7 @@
                             android:textSize="16sp" />
 
                         <TextView
-                            android:id="@+id/classfeild"
+                            android:id="@+id/DesignaitonFeild"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -450,7 +450,7 @@
                             android:textSize="16sp" />
 
                         <TextView
-                            android:id="@+id/batchfeild"
+                            android:id="@+id/JoiningYearFeild"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"

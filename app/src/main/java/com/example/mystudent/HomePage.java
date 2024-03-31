@@ -7,10 +7,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
 
 public class HomePage extends AppCompatActivity {
     TextView Nameview,usernameview,batchview,classview,genderview,bloodgrupview,dobview,parentNameView,parentRelationView;
@@ -24,13 +22,13 @@ public class HomePage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_page);
         mystd= (stdDetails) getIntent().getParcelableExtra("StudentDetails",stdDetails.class);
-        Nameview=findViewById(R.id.StudentName);
-        usernameview = findViewById(R.id.UsernameFeild);
-        batchview= findViewById(R.id.batchfeild);
-        classview=findViewById(R.id.classfeild);
-        genderview=findViewById(R.id.genderfeild);
-        bloodgrupview=findViewById(R.id.bloodgrupfeild);
-        dobview=findViewById(R.id.dobFeild);
+        Nameview=findViewById(R.id.AdminName);
+        usernameview = findViewById(R.id.AdminUserName);
+        batchview= findViewById(R.id.JoiningYearFeild);
+        classview=findViewById(R.id.DesignaitonFeild);
+        genderview=findViewById(R.id.AdminGender);
+        bloodgrupview=findViewById(R.id.AdminBloodGrup);
+        dobview=findViewById(R.id.AdminDOBFeild);
         parentNameView=findViewById(R.id.guardainnamefeild);
         parentRelationView=findViewById(R.id.realtionFeild);
         parentNumberView=findViewById(R.id.ParentNumberFeild);
